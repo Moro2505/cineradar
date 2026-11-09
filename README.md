@@ -1,16 +1,44 @@
-# React + Vite
+# CineRadar - Media Discovery Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CineRadar is a modern, responsive web application designed for exploring trending movies and TV shows. It integrates with The Movie Database (TMDB) API for fetching media content and leverages Appwrite Cloud as a Backend-as-a-Service (BaaS) to track and rank global search metrics in real-time.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Demo
 
-## React Compiler
+Website Link: [https://cineradar-rust.vercel.app](https://cineradar-rust.vercel.app)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Trending & Popular Media:** Real-time updates for trending movies, top-rated TV series, and popular releases.
+- **Appwrite Search Tracking:** Custom backend logic powered by Appwrite Databases that increments search metrics and ranks community trends upon navigating to a media details page.
+- **Real-Time Debounced Search:** Interactive search bar utilizing debounced input handling to optimize API query performance across movies, TV series, and cast members.
+- **Genre Filtering & Catalog Exploration:** Smooth multi-category filtering for broad catalogues.
+- **Embedded Trailers & Modals:** Integrated YouTube trailer player within media details modals.
+- **Actor Filmography Exploration:** Complete cast biographies, personal profiles, and top known works accessible without page reloads.
+- **Optimized UI & Loading States:** Built using Tailwind CSS alongside nested CSS styling patterns, featuring skeleton loading UI components and full screen responsiveness.
+
+---
+
+## Tech Stack
+
+- **Frontend:** React 19, Vite, React Router DOM v6
+- **Styling:** Tailwind CSS, Custom Nested CSS
+- **Backend as a Service (BaaS):** Appwrite Cloud (Databases & Query APIs)
+- **External Data Source:** TMDB (The Movie Database) REST API
+- **Deployment & Hosting:** Vercel
+
+---
+
+## Environment Variables Setup
+
+Create a `.env.local` file in the root directory of the project and configure the following environment keys:
+
+```env
+VITE_TMDB_API_KEY=your_tmdb_api_key
+VITE_APPWRITE_PROJECT_ID=your_appwrite_project_id
+VITE_APPWRITE_DATABASE_ID=your_appwrite_database_id
+VITE_APPWRITE_COLLECTION_ID=your_appwrite_collection_id
+VITE_APPWRITE_ENDPOINT=[https://cloud.appwrite.io/v1](https://cloud.appwrite.io/v1)
